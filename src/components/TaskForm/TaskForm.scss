@@ -1,0 +1,31 @@
+.TaskForm {
+    display: flex;
+
+    width: 600px;
+
+    margin: 50px auto 0;
+
+    &__input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #000;
+
+        font-size: 2rem;
+    }
+
+    & button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 150px;
+        border: 1px solid #000;
+        border-left: none;
+
+        font-size: 2rem;
+
+        &:hover {
+            background-color: #ccc;
+        }
+    }
+}

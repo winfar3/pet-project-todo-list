@@ -1,0 +1,79 @@
+.TasksList {
+  margin-top: 30px;
+}
+
+.task-item {
+  margin-bottom: 10px;
+
+  &__title {
+    width: 100%;
+    margin-left: 30px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #f0f0f0;
+      transition: all 0.3s ease 0s;
+      // top: 50%;
+      // transform: translateY(-50%);
+      // left: 10px;
+      // width: 20px;
+      // height: 20px;
+      // border: 1px solid #ccc;
+      // background-color: #fff;
+    }
+  }
+
+  & input {
+    position: absolute;
+
+    width: 0;
+    height: 0;
+
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  & span:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  & label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    padding: 10px;
+
+    cursor: pointer;
+    // background-color: #f0f0f0;
+
+    font-size: 2rem;
+
+    
+  }
+}
+
+.eptyListText {
+  margin-top: 20px;
+}
+
+.task-item > label > input:checked + span::before {
+  background-color: #6cebab;
+}
+
+.icons {
+  width: 30px;
+
+  &_arrow {
+    transform: rotate(-90deg);
+  }
+}

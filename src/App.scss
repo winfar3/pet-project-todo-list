@@ -1,0 +1,17 @@
+h1 {
+    font-size: 6rem;
+    font-weight: 500;
+}
+
+p {
+    font-size: 3rem;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 50px;
+}
