@@ -1,10 +1,22 @@
-.TaskSorting {
+.TaskFilter {
   width: 600px;
   margin-top: 30px;
 
   &__wrapper {
     display: flex;
     gap: 5px;
+
+    & input {
+      position: absolute;
+      width: 0;
+      height: 0;
+      -webkit-appearance: none;
+      appearance: none;
+
+      &:checked + label {
+        background-color: #f0f0f0;
+      }
+    }
   }
 
   &__item {
@@ -21,7 +33,7 @@
     font-size: 2rem;
 
     &:hover {
-      background-color: #f0f0f0;
+      background-color: #ccc;
     }
   }
 }

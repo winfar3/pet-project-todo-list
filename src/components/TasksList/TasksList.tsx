@@ -10,6 +10,7 @@ type TasksListProps = {
 };
 
 export const TasksList: React.FC<TasksListProps> = ({ todos, onToggle, onRemove, onEdit }) => {
+  // console.log("in list " + todos.length);
   if (todos.length === 0) {
     return(
       <p className="eptyListText">Not any task yet</p>
