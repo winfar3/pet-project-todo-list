@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/pet-project-todo-list/static/css/main.5b75fc3f.css",
+    "main.js": "/pet-project-todo-list/static/js/main.8a203eda.js",
+    "static/js/787.a5cad257.chunk.js": "/pet-project-todo-list/static/js/787.a5cad257.chunk.js",
+    "index.html": "/pet-project-todo-list/index.html",
+    "main.5b75fc3f.css.map": "/pet-project-todo-list/static/css/main.5b75fc3f.css.map",
+    "main.8a203eda.js.map": "/pet-project-todo-list/static/js/main.8a203eda.js.map",
+    "787.a5cad257.chunk.js.map": "/pet-project-todo-list/static/js/787.a5cad257.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5b75fc3f.css",
+    "static/js/main.8a203eda.js"
+  ]
+}
