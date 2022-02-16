@@ -13,14 +13,16 @@ export const TaskForm: React.FC<TaskFormProps> = (props) => {
   };
 
   const keyPressHandler = (event: React.KeyboardEvent) => {
-    if (event.key === "Enter") {
+    if (event.key === "Enter" && title !== "") {
       props.onAdd(title);
       setTitle("");
     }
   };
 
   const onAddHandler = (event: React.MouseEvent) => {
-    props.onAdd(title);
+    if (title !== "") {
+      props.onAdd(title);
+    }
     setTitle("");
   };
 

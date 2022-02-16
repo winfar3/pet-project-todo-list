@@ -23,7 +23,6 @@ export const TodoPage: React.FunctionComponent = () => {
   }, [todos]);
 
   /** TODO: 
-   * check for empty string
    * dont show new task in completed list
    */
   const addHendler = (title: string) => {
@@ -35,6 +34,7 @@ export const TodoPage: React.FunctionComponent = () => {
 
     setTodos([newTask, ...todos]);
     setFiltred([newTask, ...filtred]);
+    
   };
 
   const toggleHandler = (id: number) => {
@@ -48,30 +48,28 @@ export const TodoPage: React.FunctionComponent = () => {
     );
   };
 
-  /** TODO: refactor */
   const editHandler = (id: number) => {
-    const shouldEdit = prompt("Wanna change?");
+    const shouldEdit = prompt("Change task: ");
     setTodos(
       todos.map((todo) => {
-        if (todo.id === id) {
-          if (shouldEdit !== "" && shouldEdit !== null) {
-            todo.title = shouldEdit;
-          }
-        }
-        return todo;
+        return listMaping(todo, shouldEdit, id);
       })
     );
     setFiltred(
       filtred.map((todo) => {
-        if (todo.id === id) {
-          if (shouldEdit !== "" && shouldEdit !== null) {
-            todo.title = shouldEdit;
-          }
-        }
-        return todo;
+        return listMaping(todo, shouldEdit, id);
       })
     );
   };
+
+  const listMaping = (todo: ITodo, shouldEdit: string, id: number) => {
+    if (todo.id === id) {
+      if (shouldEdit !== "" && shouldEdit !== null) {
+        todo.title = shouldEdit;
+      }
+    }
+    return todo;
+  }
 
   const removeHandler = (id: number) => {
     const shouldRemove = confirm("Delete task?");
@@ -81,9 +79,9 @@ export const TodoPage: React.FunctionComponent = () => {
     }
   };
 
-  const filterHandler = (completed: boolean) => {
+  const filterHandler = (isCompleted: boolean) => {
     setFiltred(todos);
-    setFiltred((filtred) => filtred.filter((item) => item.completed === completed));
+    setFiltred((filtred) => filtred.filter((item) => item.completed === isCompleted));
   };
 
   const filtredClear = () => {
@@ -92,7 +90,9 @@ export const TodoPage: React.FunctionComponent = () => {
 
   return (
     <>
-      <TaskForm onAdd={addHendler} />
+      <TaskForm 
+        onAdd={addHendler} 
+      />
       <TaskFilter 
         onFilter={filterHandler}
         onClear={filtredClear}

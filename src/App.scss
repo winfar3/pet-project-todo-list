@@ -14,4 +14,24 @@ p {
     align-items: center;
 
     padding-top: 50px;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        max-width: 700px;
+        width: 100%;
+
+        padding: 50px 0;
+
+        box-shadow: 0px 3px 8px 3px rgba(1, 1, 1, 0.2);
+        border-radius: 15px;
+    }
+}
+
+.main {
+    max-width: 600px;
+    width: 100%;
 }

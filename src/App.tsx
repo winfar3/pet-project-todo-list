@@ -3,18 +3,15 @@ import "./App.scss";
 import { Header } from "./components/Header/Header";
 import { TodoPage } from "./pages/TodoPage/TodoPage";
 
-
-
-
 const App: React.FC = () => {
-  
-
   return (
     <div className="App">
-      <Header />
-      <main>
-        <TodoPage />
-      </main>
+      <div className="App__wrapper">
+        <Header />
+        <main className="main">
+          <TodoPage />
+        </main>
+      </div>
     </div>
   );
 };
