@@ -3,11 +3,13 @@
 }
 
 .task-item {
+  position: relative;
+
   margin-bottom: 10px;
 
   &__title {
     width: 100%;
-    margin-left: 30px;
+    margin-left: 50px;
 
     &::before {
       content: "";
@@ -19,13 +21,6 @@
       height: 100%;
       background-color: #f0f0f0;
       transition: all 0.3s ease 0s;
-      // top: 50%;
-      // transform: translateY(-50%);
-      // left: 10px;
-      // width: 20px;
-      // height: 20px;
-      // border: 1px solid #ccc;
-      // background-color: #fff;
     }
   }
 
@@ -54,11 +49,50 @@
     padding: 10px;
 
     cursor: pointer;
-    // background-color: #f0f0f0;
 
     font-size: 2rem;
+  }
 
+  &__select {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    z-index: 2;
+
+    display: block;
+    padding: 15px;
+
+    cursor: pointer;
+
+    border: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     
+    font-size: 0;
+    
+    &_0 {
+      background-color: rgb(46, 202, 124);
+    }
+
+    &_1 {
+      background-color: rgb(199, 202, 46);
+    }
+
+    &_2 {
+      background-color: rgb(202, 121, 46);
+    }
+
+    &_3 {
+      background-color: rgb(202, 46, 46);
+    }
+    
+    & option {
+      display: block;
+      font-size: 2rem;
+      background-color: #fff;
+    }
   }
 }
 

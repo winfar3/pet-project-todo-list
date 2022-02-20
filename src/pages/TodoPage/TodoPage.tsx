@@ -30,11 +30,11 @@ export const TodoPage: React.FunctionComponent = () => {
       id: Date.now(),
       title: title,
       completed: false,
+      priority: 0,
     };
 
     setTodos([newTask, ...todos]);
     setFiltred([newTask, ...filtred]);
-    
   };
 
   const toggleHandler = (id: number) => {
@@ -47,6 +47,17 @@ export const TodoPage: React.FunctionComponent = () => {
       })
     );
   };
+
+  const priorityHandler = (id: number, priority: number) => {
+    setTodos(
+      todos.map((todo) => {
+        if (todo.id === id) {
+          todo.priority = priority;
+        }
+        return todo;
+      })
+    );
+  }
 
   const editHandler = (id: number) => {
     const shouldEdit = prompt("Change task: ");
@@ -98,10 +109,11 @@ export const TodoPage: React.FunctionComponent = () => {
         onClear={filtredClear}
       />
       <TasksList
-        todos={filtred}
+        todos={filtred.sort((a: ITodo, b: ITodo) => a.priority - b.priority)}
         onToggle={toggleHandler}
         onRemove={removeHandler}
         onEdit={editHandler}
+        onPriority={priorityHandler}
       />
     </>
   );

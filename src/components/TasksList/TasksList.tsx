@@ -7,10 +7,10 @@ type TasksListProps = {
   onToggle(id: number): void
   onRemove(id: number): void
   onEdit(id: number): void
+  onPriority(id: number, priority: number): void
 };
 
-export const TasksList: React.FC<TasksListProps> = ({ todos, onToggle, onRemove, onEdit }) => {
-  // console.log("in list " + todos.length);
+export const TasksList: React.FC<TasksListProps> = ({ todos, onToggle, onRemove, onEdit, onPriority }) => {
   if (todos.length === 0) {
     return(
       <p className="eptyListText">Not any task yet</p>
@@ -34,6 +34,21 @@ export const TasksList: React.FC<TasksListProps> = ({ todos, onToggle, onRemove,
           {todos.map((todo) => {
             return (
               <li key={todo.id} className="TasksList__item task-item">
+                <select 
+                    value={todo.priority}
+                    onChange={(event) => {
+                      const selectedOption = Number(event.target.value);
+                      onPriority(todo.id, selectedOption);
+                    }}
+                    name="prioritySelect" 
+                    id="prioritySelect" 
+                    className={`task-item__select task-item__select_${todo.priority}`}
+                  >
+                    <option value="0">Unimportant</option>
+                    <option value="1">Usual</option>
+                    <option value="2">Important</option>
+                    <option value="3">First of all</option>
+                  </select>
                 <label>
                   <input 
                     type="checkbox" 

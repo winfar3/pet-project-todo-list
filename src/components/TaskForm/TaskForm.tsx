@@ -37,7 +37,7 @@ export const TaskForm: React.FC<TaskFormProps> = (props) => {
         placeholder="Add new task"
       />
       <button onClick={onAddHandler}>
-        <img src="/icons/arrow-icon.svg" className="icons icons_arrow" />
+        <img src="./icons/arrow-icon.svg" className="icons icons_arrow" />
       </button>
     </div>
   );
