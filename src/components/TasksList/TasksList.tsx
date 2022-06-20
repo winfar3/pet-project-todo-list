@@ -57,10 +57,10 @@ export const TasksList: React.FC<TasksListProps> = ({ todos, onToggle, onRemove,
                   />
                   <span className="task-item__title">{todo.title}</span>
                   <span onClick={event => editHandler(event, todo.id)}>
-                    <img src="/icons/edit-icon.svg" alt="edit icon" className="icons"/>
+                    <img src="./icons/edit-icon.svg" alt="edit icon" className="icons"/>
                   </span>
                   <span onClick={event => removeHandler(event, todo.id)}>
-                    <img src="/icons/delete-icon.svg" alt="delete icon" className="icons"/>
+                    <img src="./icons/delete-icon.svg" alt="delete icon" className="icons"/>
                   </span>
                 </label>
               </li>
