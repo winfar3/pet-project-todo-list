@@ -109,7 +109,7 @@ export const TodoPage: React.FunctionComponent = () => {
         onClear={filtredClear}
       />
       <TasksList
-        todos={filtred.sort((a: ITodo, b: ITodo) => a.priority - b.priority)}
+        todos={filtred.sort((a: ITodo, b: ITodo) => b.priority - a.priority)}
         onToggle={toggleHandler}
         onRemove={removeHandler}
         onEdit={editHandler}
